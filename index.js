@@ -7,29 +7,53 @@ const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
 
 var ctx = document.getElementById('myChart');
-var data_1 = [{x: 'Pass', net: 100, cogs: 50, gm: 50}, {x: 'Fail', net: 120, cogs: 55, gm: 75}];
+var data_1 = [
+  { x: 'Pass', net: 100, cogs: 50, gm: 50 },
+  { x: 'Fail', net: 120, cogs: 55, gm: 75 },
+];
 var data = {
-  labels: ['Pass', 'Fail'],
-  datasets: [{
+  labels: ['Pass', 'Fail', 'Over All'],
+  datasets: [
+    {
       label: 'OUP - JOURNAL',
-      data: data_1,
-      parsing: {
-          yAxisKey: 'net'
-      }
-  }, {
+      data: [50, 25, 75],
+
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        // 'rgb(54, 162, 235)',
+        // 'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4,
+    },
+    {
       label: 'LWW - JOURNAL',
-      data: data_1,
-      parsing: {
-          yAxisKey: 'cogs'
-      }
-  }, {
+      data: [30, 15, 45],
+      backgroundColor: [
+        // 'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        // 'rgb(255, 205, 86)'
+      ],
+      // ,
+      // parsing: {
+      //   yAxisKey: 'cogs',
+      // },
+    },
+    {
       label: 'TNF - BOOKS',
-      data: data_1,
-      parsing: {
-          yAxisKey: 'gm'
-      }
-  }]
-}
+      data: [10, 5, 25],
+
+      backgroundColor: [
+        // 'rgb(255, 99, 132)',
+        // 'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)',
+      ],
+      // ,
+      // parsing: {
+      //   yAxisKey: 'gm',
+      // },
+    },
+  ],
+};
 var data1 = {
   labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
